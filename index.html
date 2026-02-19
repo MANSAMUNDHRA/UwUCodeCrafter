@@ -853,7 +853,9 @@ async function runCard(e, id) {
   res.textContent = 'Running…';
 
   try {
-    const r = await fetch('http://localhost:9000/run', {
+    // const r = await fetch('http://localhost:9000/run', {
+    const r = await fetch('/run', {
+
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ code: ta.value })
@@ -924,7 +926,9 @@ async function sendMsg() {
   document.querySelector('.topbar-title').innerHTML = `<div class="dot-anim" style="margin-right:6px"><span></span><span></span><span></span></div> Generating`;
 
   try {
-    const res = await fetch('http://localhost:9000/chat', {
+    // const res = await fetch('http://localhost:9000/chat', {
+    const res = await fetch('/chat', {
+
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: msg })
